@@ -1,5 +1,7 @@
 <picture {{#if id}} id="{{ id }}" {{/if}}>
+    {{#unless nowebp}}
     <source srcset="{{ file }}.webp" type="image/webp">
+    {{/unless}}
     <source srcset="{{ file }}.{{ ext }}" type="image/{{ type }}">
     <img title="{{ title }}" src="{{ file }}.{{ ext }}" loading="lazy" alt="{{ alt }}">
 </picture>

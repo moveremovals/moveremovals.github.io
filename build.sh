@@ -5,4 +5,4 @@ docker run --rm \
     -v $(pwd):/var/www/html \
     -w /var/www/html \
     node:19 \
-    npm run build
+    npm run build --cache=.npm_cache

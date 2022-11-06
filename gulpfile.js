@@ -5,7 +5,10 @@ const webp = require('gulp-webp')
 const cleanCSS = require('gulp-clean-css');
 
 const imgWebp = done =>
-    gulp.src(['src/images/*.jpg', 'src/images/*.png'])
+    gulp.src(
+        ['src/images/*.jpg', 'src/images/*.png', 'src/images/**/*.svg'],
+        { base: './src/images' }
+    )
     .pipe(webp())
     .pipe(gulp.dest('dist/images'))
     .on('end', done)
