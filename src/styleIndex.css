@@ -9,11 +9,11 @@
 .point {
     margin-bottom: 1rem;
     display: flex;
-    width: calc(50% - 1rem);
+    width: 100%;
 }
 .point .point-title {
-    font-size: 1.2rem;
-    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 .point picture img {
     width: 50px;
@@ -28,8 +28,7 @@
     #heroImg {
         display: block;
         width: calc(50% - 2rem);
-        height: auto;
-        object-fit: contain;
+        height: fit-content;
         max-width: 500px;
         max-height: 500px;
     }
@@ -43,5 +42,8 @@
         max-width: 500px;
         max-height: 500px;
         display: block;
+    }
+    .point {
+        width: calc(50% - 1rem);
     }
 }

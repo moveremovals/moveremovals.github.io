@@ -19,7 +19,7 @@ const img = done =>
     .on('end', done)
 
 const html = done =>
-    gulp.src('src/*.hbs')
+    gulp.src('src/**/*.hbs')
     .pipe(
             handlebars(
                 {
