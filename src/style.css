@@ -251,6 +251,9 @@ footer {
 footer a:hover {
     color: var(--green);
 }
+footer img {
+    height: 25px;
+}
 @media only screen and (min-width: 600px) {
     nav {
         position: relative;
