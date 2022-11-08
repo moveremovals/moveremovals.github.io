@@ -5,4 +5,4 @@ docker run --rm \
     -v $(pwd):/var/www/html \
     -w /var/www/html \
     node:19 \
-    npm install --save-dev gulp-purgecss --cache=.npm_cache
+    npm i --cache=.npm_cache
