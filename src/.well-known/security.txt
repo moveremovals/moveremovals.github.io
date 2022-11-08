@@ -1,0 +1,5 @@
+Contact: mailto:moveremovals.dev@gmail.com
+Contact: mailto:gavg.apps@gmail.com
+Expires: 2023-12-08T23:59:00.000Z
+Preferred-Languages: en
+Canonical: https://moveremovals.github.io/.well-known/security.txt

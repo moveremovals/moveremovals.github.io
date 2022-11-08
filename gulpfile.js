@@ -57,8 +57,15 @@ const css = done => gulp.src('src/*.css')
     .pipe(gulp.dest('dist'))
     .on('end', done)
 
+const statics = done => gulp.src(
+        ['src/*.txt', 'src/.well-known/*'],
+        { base: './src' }
+    )
+    .pipe(gulp.dest('dist'))
+    .on('end', done)
+
 const watchHbs = () => gulp.watch('src/**/*.hbs', html)
 const watchCss = () => gulp.watch('src/*.css', css)
 
-exports.build = gulp.parallel(html, css, img, imgWebp)
+exports.build = gulp.parallel(html, css, img, imgWebp, statics)
 exports.watch = gulp.parallel(watchHbs, watchCss)
