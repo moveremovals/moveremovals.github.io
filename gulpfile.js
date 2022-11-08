@@ -2,7 +2,11 @@ const gulp = require('gulp')
 const handlebars = require('gulp-compile-handlebars')
 const rename = require('gulp-rename')
 const webp = require('gulp-webp')
-const cleanCSS = require('gulp-clean-css');
+const cleanCSS = require('gulp-clean-css')
+const purgecss = require('gulp-purgecss')
+
+const hbsGlobs = ['src/*.hbs', 'src/partials/*.hbs']
+const cssGlobs = ['src/*.css']
 
 const imgWebp = done =>
     gulp.src(
@@ -19,7 +23,7 @@ const img = done =>
     .on('end', done)
 
 const html = done =>
-    gulp.src('src/**/*.hbs')
+    gulp.src(hbsGlobs)
     .pipe(
             handlebars(
                 {
@@ -46,8 +50,10 @@ const html = done =>
     .pipe(gulp.dest('dist'))
     .on('end', done)
 
-const css = done =>
-    gulp.src('src/*.css')
+const css = done => gulp.src(cssGlobs)
+    .pipe(purgecss({
+        content: hbsGlobs
+    }))
     .pipe(cleanCSS({ debug: true }, (details) => {
         console.log(`${details.name}: ${details.stats.originalSize}`)
         console.log(`${details.name}: ${details.stats.minifiedSize}`)
@@ -55,9 +61,9 @@ const css = done =>
     .pipe(gulp.dest('dist'))
     .on('end', done)
 
-const watchHbs = done => gulp.watch(['src/*.hbs'], html)
+const watchHbs = done => gulp.watch(hbsGlobs, html)
 
-const watchCss = done => gulp.watch(['src/*.css'], css)
+const watchCss = done => gulp.watch(cssGlobs, css)
 
 exports.build = gulp.parallel(html, css, img, imgWebp)
 
