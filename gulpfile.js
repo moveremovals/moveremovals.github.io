@@ -58,7 +58,7 @@ const css = done => gulp.src('src/*.css')
     .on('end', done)
 
 const statics = done => gulp.src(
-        ['src/*.txt', 'src/.well-known/*'],
+    ['src/*.txt', 'src/.well-known/*', 'src/_config.yml'],
         { base: './src' }
     )
     .pipe(gulp.dest('dist'))
