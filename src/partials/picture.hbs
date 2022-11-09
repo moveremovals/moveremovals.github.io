@@ -8,6 +8,8 @@
         src="{{ file }}.{{ ext }}"
         {{#unless nolazy}}
         loading="lazy"
+        {{else}}
+        loading="eager"
         {{/unless}}
         alt="{{ alt }}"
         width="{{ width }}"
