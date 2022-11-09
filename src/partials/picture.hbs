@@ -6,7 +6,9 @@
     <img 
         title="{{ title }}"
         src="{{ file }}.{{ ext }}"
+        {{#unless nolazy}}
         loading="lazy"
+        {{/unless}}
         alt="{{ alt }}"
         width="{{ width }}"
         height="{{ height }}"
