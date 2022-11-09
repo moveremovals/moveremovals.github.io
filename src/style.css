@@ -63,16 +63,10 @@ body {
 h1 {
     font-size: 1.2rem;
     line-height: 90%;
-}
-h2 {
-    font-size: 1rem;
     text-align: center;
     background-color: #102010;
     padding: 0.5rem 0;
     border-radius: 1rem;
-}
-h3 {
-    font-size: 0.75rem;
 }
 .text-bracket {
     font-size: 1.5rem;
@@ -279,13 +273,7 @@ footer img {
         justify-content: space-between;
     }
     h1 {
-        font-size: 1.8rem;
-    }
-    h2 {
         font-size: 1.2rem;
-    }
-    h3 {
-        font-size: 1rem;
     }
     .md-mr-auto {
         margin-right: auto;
