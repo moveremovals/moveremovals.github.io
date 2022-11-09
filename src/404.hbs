@@ -1,0 +1,39 @@
+{{#> base title="About" currentPath="/"}}
+
+{{#*inline "page-head"}}
+
+<link rel="stylesheet" href="styleIndex.css?v={{ version }}">
+
+{{/inline}}
+
+{{#*inline "main-block"}}
+
+{{> picture
+id="logoLarge"
+title="Move Removals Logo"
+alt="The word Move stylized, looking swish"
+file="/images/move_logo"
+ext="png"
+type="png"
+width="500"
+height="500"
+}}
+
+{{> picture
+id="heroImg"
+title="Move Removals Van"
+alt="A smart looking van moves efficiently from left to right"
+file="/images/van"
+ext="jpg"
+type="jpeg"
+width="600"
+height="450"
+}}
+
+<h2 class="fc-primary p-1">Looking for a top quality removals service?</h2>
+<p>You're in the right place, just not on the right page...</p>
+<p><a href="/" title="About">Click here to find out more about {{ siteName }}</a></p>
+
+{{/inline}}
+
+{{/base}}
